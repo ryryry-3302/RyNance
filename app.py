@@ -1,3 +1,4 @@
+from http.client import REQUEST_TIMEOUT
 import os
 import datetime
 
@@ -35,6 +36,16 @@ def after_request(response):
     return response
 
 @app.route("/")
-#@login_required REMOVE this later
+@login_required
 def index():
     return render_template("index.html")
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    session.clear()
+
+    if request.method == "GET":
+        return render_template("login.html")
+
+    else:
+        return apology("u fucked up", 400)
