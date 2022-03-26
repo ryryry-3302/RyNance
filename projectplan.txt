@@ -1,0 +1,46 @@
+What will your software do? What features will it have? How will it be executed?
+
+    Register/Login for managing user data on their own financial standings#
+        -Can reuse some of pset finances code
+        -Need to think about how to set up the data for the tables containing user information
+
+    Retirement Calculator
+        -Use python to code the math that is inputted from html #
+            -a nice to have would possibly be incorporating stock price/ 
+             job wage data from apis
+
+    Housing Option comparison tool
+        -Calculates the difference in cost#
+        -breakdown difference in bank and hdb loan#
+            -bank loan data from api???
+        
+        -link to further readings and articles
+
+    Job salary comparer
+        -ideally sources from local data
+
+    Budget/ Monthly spending monitoring
+        -Slice data in easy to read beautiful charts
+        -Allows users to edit and remove data
+
+
+What new skills will you need to acquire? What topics will you need to research?
+    Improve java script knowledge#
+    Improve Bootstrap knowledge#
+    Learn how to create graphs#
+    Find relavant APIs and learn how to process them and request for them
+
+
+If working with one or two classmates, who will do what?
+    -sadge
+
+
+In the world of software, most everything takes longer to implement than you expect. 
+And so it’s not uncommon to accomplish less in a fixed amount of time than you hope. 
+What might you consider to be a good outcome for your project? A better outcome? 
+The best outcome?
+
+    -good outcome is implement the plans marked by#
+    -better outcome is i do that and make a relatively aesthetically pleasing site
+    -best would be for me to implement all functions ive been looking at
+
