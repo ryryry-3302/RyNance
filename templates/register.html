@@ -1,9 +1,39 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Login
+    Register
 {% endblock %}
 
 {% block main %}
-        <h1>login</h1>
+        <div  class="mb-3"><h1>Register</h1></div>
+        <div class="container-md text-start">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <form>
+                        <div class="my-4">
+                        <label for="UserName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="UserName" aria-describedby="nameHelp">
+                        </div>
+                        
+                        <div class="mb-4">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+
+                        <div class="mb-4">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+
+                        <div class="mb-4 form-check">
+                        <input type="checkbox" class="form-check-input" id="WantLogin" name="WantLogin">
+                        <label class="form-check-label" for="WantLogin">Login after registering.</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 {% endblock %}
