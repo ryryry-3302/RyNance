@@ -5,5 +5,29 @@
 {% endblock %}
 
 {% block main %}
-        <h1>login</h1>
+<div  class="mb-3">
+    <h1>Login</h1>
+</div>
+
+<div class="container-md text-start">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form action="/login" method="post">
+                <div class="mb-4">
+                <label for="inputemail" class="form-label">Email</label>
+                <input required type="email" name="inputemail" class="form-control" id="inputemail1" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-4">
+                <label for="password" class="form-label">Password</label>
+                <input required type="password" name="password" class="form-control" id="password">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
 {% endblock %}
