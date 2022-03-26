@@ -12,27 +12,33 @@
                     <form>
                         <div class="my-4">
                         <label for="UserName" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="UserName" aria-describedby="nameHelp">
+                        <input required type="text" name="username" class="form-control" id="UserName" aria-describedby="nameHelp">
                         </div>
                         
                         <div class="mb-4">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="inputemail1" class="form-label">Email address</label>
+                        <input required type="email" name="inputemail" class="form-control" id="inputemail1" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                         </div>
 
                         <div class="mb-4">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="password" class="form-label">Password</label>
+                        <input required type="password" name="password" class="form-control" id="password">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="confirmation" class="form-label">Confirm Password</label>
+                            <input required type="password" name="confirmation" class="form-control" id="confirm_password">
                         </div>
 
                         <div class="mb-4 form-check">
-                        <input type="checkbox" class="form-check-input" id="WantLogin" name="WantLogin">
-                        <label class="form-check-label" for="WantLogin">Login after registering.</label>
+                        <input type="checkbox" class="form-check-input" id="wantlogin" name="WantLogin">
+                        <label class="form-check-label" name="WantLogin" for="wantlogin">Login after registering.</label>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Register</button>
                     </form>
+                    
                 </div>
             </div>
         </div>
