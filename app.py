@@ -69,25 +69,28 @@ def register():
         return render_template("register.html")
 
     """Register user"""
-    name = request.form.get("UserName")
+    username = request.form.get("username")
     password = generate_password_hash(request.form.get("password"))
+    email = request.form.get("inputemail")
 
     if not request.form.get("username"):
         return apology("must provide username", 400)
 
         # Ensure password was submitted
-    elif not request.form.get("password"):
+    if not request.form.get("password"):
         return apology("must provide password", 400)
+
+    if not request.form.get("inputemail"):
+        return apology("must provide email", 400)    
 
     if request.form.get("password") != request.form.get("confirmation"):
         return apology("Passwords dont match pepega")
 
-    if len(db.execute("SELECT username FROM users WHERE username = ?", username)) > 0:
-        return apology("Username taken lol")
+    if len(db.execute("SELECT email FROM users WHERE email = ?", email)) > 0:
+        return apology("Email taken lol")
 
-    db.execute('INSERT INTO users (username, hash) values(?, ?)', username, password)
+
+    db.execute('INSERT INTO users (username, hash, email) values(?, ?, ?)', username, password, email)
     return redirect("/login")
-
-    
 
     
