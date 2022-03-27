@@ -6,10 +6,10 @@
 
 {% block main %}
 <div  class="mb-3">
-    <h1>Login</h1>
+    <h1 class="text-light">Login</h1>
 </div>
 
-<div class="container-md text-start">
+<div class="container-md text-start text-light">
     <div class="row justify-content-center">
         <div class="col-6">
             <form action="/login" method="post">
@@ -23,7 +23,8 @@
                 <input required type="password" name="password" class="form-control" id="password">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-dark">Login</button>
+                <span>Don't have an account? Register <a href="/register" class="text-light">here</a></span>
             </form>
             
         </div>
