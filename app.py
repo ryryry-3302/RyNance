@@ -127,7 +127,8 @@ def register():
 def calculate():
     return render_template("calculate.html")
 
-@app.route("/retirement", methods=["GET, POST"])
+@app.route("/retirement", methods=["GET", "POST"])
 @login_required
 def retirement():
+    
     return render_template("retirement.html")
