@@ -73,10 +73,7 @@ def login():
 
     # Redirect user to home page
     return redirect("/")
-
-
-    
-    
+  
 
 @app.route("/logout")
 def logout():
@@ -120,3 +117,12 @@ def register():
     return redirect("/login")
 
     
+@app.route("/calculate")
+@login_required
+def calculate():
+    return render_template("calculate.html")
+
+@app.route("/retirement", methods=["GET, POST"])
+@login_required
+def retirement():
+    return render_template("retirement.html")

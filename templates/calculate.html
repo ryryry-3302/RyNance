@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calculate
+{% endblock %}
+
+{% block main %}
+
+<div class="container-md text-start">
+    <div class="row justify-content-center">
+        <div class="col-8 mb-3">
+            <h1 class="display-3 tw-bolder text-light text-center">Calculate</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a href="/retirement"><img src="/static/retirementslide.png" class="d-block w-100" alt="retirement photo"></a>
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5><span class="text-light p-1 fw-bolder bg-secondary" style="--bs-bg-opacity: .4;"> Retirement Planning </span></h5>
+                      <p class="text-light p-1 fw-bolder bg-secondary bg-gradient" style="--bs-bg-opacity: .4;">Have an insight on how much you need to save for your retirement.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="/home"><img src="/static/homeslide.png" class="d-block w-100" alt="Home"></a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5><span class="text-light p-1 fw-bolder bg-secondary" style="--bs-bg-opacity: .4;"> Home Ownership </span></h5>
+                        <p class="text-light p-1 fw-bolder bg-secondary" style="--bs-bg-opacity: .4;">Compare the costs that home ownerships involves.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="/travel"><img src="/static/travellingslide.png" class="d-block w-100" alt="Travelling"></a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5><span class="text-light p-1 fw-bolder bg-secondary" style="--bs-bg-opacity: .4;"> Planning for a trip </span></h5>
+                        <p class="text-light p-1 fw-bolder bg-secondary" style="--bs-bg-opacity: .4;">Find out how much to budget from accomodationg to tickets.</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

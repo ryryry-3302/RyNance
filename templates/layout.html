@@ -20,9 +20,9 @@
     </head>
 
     <body>
-        <header>
+        <header class="bg-dark bg-gradient pb-3" style="--bs-bg-opacity: .8;">
             <div class="container-md">
-            <nav class="navbar navbar-expand-md navbar-dark bg-secondary border border-5 ronded-bottom-3">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark border border-5 ronded-bottom-3" style="--bs-bg-opacity: .5;">
                 <div class="container-fluid">
 
                     <a class="navbar-brand" href="/">
@@ -33,18 +33,18 @@
                     <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end fw-bold"  style="text-align: right">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end fw-bold fs-5"  style="text-align: right">
                         <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link active" href="projects.html">Calculate</a>
+                        <a class="nav-link active" href="/calculate">Calculate</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link active" href="portfolio.html">Budget</a>
+                        <a class="nav-link active" href="/budget">Budget</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link active" href="about.html">Learn</a>
+                        <a class="nav-link active" href="/learn">Learn</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Contact Me</a>
@@ -61,13 +61,13 @@
         </div>
     </header>
 
-    <main class="container-fluid py-5 text-center">
+    <main class="container-fluid py-5 text-center bg-dark bg-gradient" style="--bs-bg-opacity: .8;">
             {% block main
             %}{% endblock %}
     </main>
 
-    <footer class="mb-5 small text-center text-muted">
-        Brought to you by Ry Pte Ltd&#169;2022
+    <footer class="small text-end text-light bg-dark bg-gradient">
+        <p class="text-muted pt-3 mb-0 pe-3 pb-1">Brought to you by Ry Pte Ltd&#169;2022 </p>
     </footer>
 
     </body>
