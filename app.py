@@ -130,5 +130,5 @@ def calculate():
 @app.route("/retirement", methods=["GET", "POST"])
 @login_required
 def retirement():
-    
-    return render_template("retirement.html")
+    if request.method == "GET":
+        return render_template("retirement.html")

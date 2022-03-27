@@ -7,7 +7,55 @@
 {% block main %}
 
 <div class="container-md text-start">
-    hi
+    <div class="row justify-content-center">
+        <div class="col-8 mb-3">
+            <h1 class="display-3 tw-bolder text-light text-center">Retirement Calculator</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            <h3 class="fs-4 tw-bolder text-light text-start">Current Age</h3>
+        </div>
+        <div class="col-md-2 mb-3">
+            <input type="text" required autofocus class="form-control input-lg text-center" value="30" id="age" placeholder="Current Age">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            <h3 class="fs-4 tw-bolder text-light text-start">Portfolio size</h3>
+        </div>
+        <div class="col-md-2 mb-3">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text">$</span>
+                <input required type="text" class="form-control text-center" value="100000" id="portvalue" placeholder="Portolio Value">
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            <h3 class="fs-4 tw-bolder text-light text-start">Yearly Contribution</h3>
+        </div>
+        <div class="col-md-2 mb-3">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text">$</span>
+                <input required type="text" class="form-control" value="50000" id="contribution" placeholder="Yearly Contribution">
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            <h3 class="fs-4 tw-bolder text-light text-start">Withdrawl Rate</h3>
+        </div>
+        <div class="col-md-2 mb-3">
+            <div class="input-group input-group-lg">
+                
+                <input require type="text" class="form-control text-center" value="3.25" id="portvalue" placeholder="Withdrawl Rate">
+                <span class="input-group-text">%</span>
+            </div>
+        </div>
+    </div>
+    
 </div>
+
 
 {% endblock %}
