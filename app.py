@@ -114,6 +114,11 @@ def register():
 
 
     db.execute('INSERT INTO users (username, hash, email) values(?, ?, ?)', username, password, email)
+    if request.form.get("WantLogin") == "want":
+        rows = db.execute("SELECT * FROM users WHERE email = ?", email)
+        session["user_id"] = rows[0]["id"]
+        return redirect("/")
+
     return redirect("/login")
 
     
