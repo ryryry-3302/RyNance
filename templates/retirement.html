@@ -5,14 +5,14 @@
 {% endblock %}
 
 {% block main %}
-
+<script src="/static/retirement_calc.js"></script>
 <div class="container-md text-start">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center align-items-center">
         <div class="col-8 mb-3">
             <h1 class="display-3 tw-bolder text-light text-center">Retirement Calculator</h1>
         </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center align-items-center mb-3">
         <div class="col-md-5 mb-3">
             <h3 class="fs-4 tw-bolder text-light text-start">Current Age</h3>
         </div>
@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center align-items-center mb-3">
         <div class="col-md-5 mb-3">
             <h3 class="fs-4 tw-bolder text-light text-start">Portfolio size</h3>
         </div>
@@ -36,7 +36,18 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center">
+     <div class="row justify-content-center align-items-center mb-3">
+        <div class="col-md-5 mb-3">
+            <h3 class="fs-4 tw-bolder text-light text-start">Retirement Expenses</h3>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text">$</span>
+                <input required type="text" class="form-control text-center" value="50000" id="withd" placeholder="Yearly Contribution">
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center mb-3">
         <div class="col-md-5 mb-3">
             <h3 class="fs-4 tw-bolder text-light text-start">Yearly Contribution</h3>
         </div>
@@ -47,7 +58,7 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center align-items-center mb-3">
         <div class="col-md-5 mb-3">
             <h3 class="fs-4 tw-bolder text-light text-start"> Yearly Increment</h3>
         </div>
@@ -59,18 +70,8 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-md-5 mb-3">
-            <h3 class="fs-4 tw-bolder text-light text-start">Retirement Expenses</h3>
-        </div>
-        <div class="col-md-3 mb-3">
-            <div class="input-group input-group-lg">
-                <span class="input-group-text">$</span>
-                <input required type="text" class="form-control text-center" value="50000" id="withd" placeholder="Yearly Contribution">
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center">
+   
+    <div class="row justify-content-center align-items-center mb-3">
         <div class="col-md-5 mb-3">
             <h3 class="fs-4 tw-bolder text-light text-start">Withdrawl Rate</h3>
         </div>
@@ -82,7 +83,7 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center align-items-center mb-3">
         <div class="col-md-5 mb-3">
             <h3 class="fs-4 tw-bolder text-light text-start">Yearly Investment Growth Rate</h3>
         </div>
@@ -94,7 +95,7 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mb-3 align-items-center mb-3" >
         <div class="col-md-5 mb-3">
             <h3 class="fs-4 tw-bolder text-light text-start">Inflation Rate</h3>
         </div>
@@ -106,7 +107,24 @@
             </div>
         </div>
     </div>
-    <script src="/static/retirement_calc.js"></script>
+    <div class="row justify-content-center align-items-center mb-3">
+        <div class="col-md-5 mb-3 align-middle">
+            <span class="fs-4 tw-bolder text-light text-start align-middle">Retirement Age</span>
+        </div>
+        <div class="col-md-3 mb-3">
+            <h3 class="display-4 text-light text-center text-align-top" id="retirementage">0</h3>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center mb-1">
+        <div class="col-md-5 mb-3 align-middle">
+            <span class="fs-4 tw-bolder text-light text-start align-middle">Retirement Sum</span>
+        </div>
+        <div class="col-md-3 mb-3">
+            <h3 class="display-5 text-light text-center text-align-top" id="retireport">0</h3>
+        </div>
+    </div>
+    
 </div>
 
 
