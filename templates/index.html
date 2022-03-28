@@ -5,5 +5,33 @@
 {% endblock %}
 
 {% block main %}
-        <h1>hi</h1>
+    <div class="container-md bg-dark" style="--bs-bg-opacity: 0.2;">
+        <div class="row">
+            <div class="col">
+            <div class="display-1 text-center text-light mt-3 m-3 fw-bold">Home</div>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col">
+            <div class="display-5 text-center text-light mt-3 fst-italic">Welcome {{name}},</div>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col">
+            <div class="display-6 text-center text-light mt-3 fst-italic text-decoration-underline">What do you want to do today?</div>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-10"></div>
+            <div class="col-2">
+            <a href="/change" class="text-decoration-none"> <div class="text-light fs-6 fw-bold me-2 mb-2">Change password</div></a>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-10"></div>
+            <div class="col-2">
+            <a href="/logout" class="text-decoration-none"> <div class="text-light fs-6 fw-bold me-2 mb-2">Sign out</div></a>
+            </div> 
+        </div>
+    </div>    
 {% endblock %}

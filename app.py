@@ -39,7 +39,27 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    return render_template("index.html")
+    rows = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
+    name = rows[0]["username"]
+    return render_template("index.html", name=name)
+
+@app.route("/change", methods=["GET","POST"])
+@login_required
+def change():
+    if request.method == "GET":
+        return render_template("change.html")
+
+    rows = db.execute("SELECT hash FROM users WHERE id = ?", session["user_id"])
+
+    if not check_password_hash(rows[0]["hash"], request.form.get("oldpassword")):
+        return apology("Incorrect password", 403)
+    
+    if request.form.get("password") != request.form.get("confirmation"):
+        return apology("Passwords dont match pepega")
+
+    password = generate_password_hash(request.form.get("password"))
+    db.execute("UPDATE users SET hash = ? WHERE id = ?", password, session["user_id"])
+    return redirect("/")
 
 
 @app.route("/login", methods=["GET", "POST"])

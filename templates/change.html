@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+        <div  class="mb-3 text-light"><h1>Register</h1></div>
+        <div class="container-md text-start text-light">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <form action="/change" method="post">
+                        <div class="mb-4">
+                            <label for="password" class="form-label">old Password</label>
+                            <div class="input-group mb-4">
+                                <span class="input-group-text">
+                                    <i class="bi bi-key"></i>
+                                </span>
+                            <input required type="password" name="oldpassword" class="form-control" id="oldpassword">
+                        </div>
+
+                        <div class="mb-4">
+                        <label for="password" class="form-label">New Password</label>
+                        <div class="input-group mb-4">
+                            <span class="input-group-text">
+                                <i class="bi bi-key-fill"></i>
+                            </span>
+                        <input required type="password" name="password" class="form-control" id="password">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="confirmation" class="form-label">Confirm Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="bi bi-key-fill"></i>
+                                </span>
+                            <input required type="password" name="confirmation" class="form-control" id="confirm_password">
+                        </div>
+
+                        <div class="mb-4 form-check">
+                        <input type="checkbox" class="form-check-input" id="wantlogin" name="WantLogin" value="want">
+                        <label class="form-check-label" name="WantLogin" for="wantlogin">Login after registering.</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+{% endblock %}
