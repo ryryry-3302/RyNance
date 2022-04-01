@@ -152,3 +152,9 @@ def calculate():
 def retirement():
     if request.method == "GET":
         return render_template("retirement.html")
+
+@app.route("/learn", methods=["GET", "POST"])
+@login_required
+def learn():
+    if request.method == "GET":
+        return render_template("learn.html")

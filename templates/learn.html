@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calculate
+{% endblock %}
+
+{% block main %}
+
+
+<div class="container-md text-start bg-dark border border-secondary border-3 border-dark" style="--bs-bg-opacity: 0.2; border-radius: 2rem;">
+    
+    <div class="row justify-content-center align-items-center">
+        <div class="col-3">
+            
+            <img src="/static/Investopedia-Logo.png" class="img-fluid">
+        
+        </div>
+        <div class="col-9">
+            <form class="d-flex m-3 ms-0">
+                <div class="input-group align-bottom">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input class="form-control me-2" type="search" placeholder="Search for terms on investopedia" aria-label="Search" style="opacity: 0.6;"> 
+                </div>
+                <button class="btn btn-dark" type="submit">Search</button>
+            </form>
+        </div>  
+    </div>
+    
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-dark" style="--bs-bg-opacity:0.4;">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Go to Top</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link "href="#">Articles</a>
+                  <a class="nav-link" href="#">Flowcharts</a>
+                  <a class="nav-link disabled">Videos</a>
+                  <a class="nav-link" href="#communities">Communities</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </div>
+         
+    
+    <div class="row justify-content-center align-items-center" id="communities">
+        <h2 class="display-3 text-light" id="communities">Communities</h2>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+            <ul class="list-group m-3 bg-dark" style="--bs-bg-opacity:0.4">
+                <li class="list-group-item list-group-item-dark"><a href="https://www.reddit.com/r/singaporefi/" class="text-dark text-decoration-none">Singapore Financial Independence Subreddit</a></li>
+                <li class="list-group-item list-group-item-secondary">A second item</li>
+                <li class="list-group-item list-group-item-dark">A third item</li>
+                <li class="list-group-item list-group-item-secondary">A fourth item</li>
+                <li class="list-group-item list-group-item-dark">And a fifth one</li>
+            </ul>
+        </div>
+        <div class="col-4">
+        </div>
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}
