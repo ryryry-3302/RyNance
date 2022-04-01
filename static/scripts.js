@@ -1,13 +1,11 @@
-var password = document.getElementById("password")
-  , confirm_password = document.getElementById("confirm_password");
 
-function validatePassword(){
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
-  } else {
-    confirm_password.setCustomValidity('');
-  }
-}
+$(document).ready(function () {
+  $('#searchform').submit(function (e) {
+    e.preventDefault()
+    console.log("i am alive")
+    let searchterm = $('#searchterm').val()
 
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+    let url = "https://www.investopedia.com/search?q=" + searchterm.replaceAll(" ", "+")
+    window.location.href = url
+  });
+});

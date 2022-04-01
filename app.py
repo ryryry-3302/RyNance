@@ -158,3 +158,4 @@ def retirement():
 def learn():
     if request.method == "GET":
         return render_template("learn.html")
+

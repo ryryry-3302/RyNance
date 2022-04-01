@@ -5,37 +5,26 @@
 {% endblock %}
 
 {% block main %}
-
-
+<script src="/static/scripts.js"></script>
 <div class="container-md text-start bg-dark border border-secondary border-3 border-dark" style="--bs-bg-opacity: 0.2; border-radius: 2rem;">
     
-    <div class="row justify-content-center align-items-center">
-        <div class="col-3">
-            
-            <img src="/static/Investopedia-Logo.png" class="img-fluid">
+    <div class="row justify-content-center">
+        <h1 class="display-1 text-light text-center">
+            Learn <i class="bi bi-mortarboard-fill"></i>
+        </h1>
         
-        </div>
-        <div class="col-9">
-            <form class="d-flex m-3 ms-0">
-                <div class="input-group align-bottom">
-                    <span class="input-group-text"><i class="bi bi-search"></i></span>
-                    <input class="form-control me-2" type="search" placeholder="Search for terms on investopedia" aria-label="Search" style="opacity: 0.6;"> 
-                </div>
-                <button class="btn btn-dark" type="submit">Search</button>
-            </form>
-        </div>  
     </div>
     
-    <div class="row">
+    <div class="row ">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-dark" style="--bs-bg-opacity:0.4;">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Go to Top</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                  <a class="nav-link "href="#">Articles</a>
+                <div class="navbar-nav justify-content-center w-100 fs-5 fw-bold">
+                 <a class="nav-link"href="#search">Search</a>
+                  <a class="nav-link "href="#books">Books</a>
                   <a class="nav-link" href="#">Flowcharts</a>
                   <a class="nav-link disabled">Videos</a>
                   <a class="nav-link" href="#communities">Communities</a>
@@ -44,13 +33,69 @@
             </div>
           </nav>
     </div>
-         
+    <div class="row justify-content-center align-items-center m-3" id="communities">
+        <h2 class="display-5 text-light" id="search">Search investopedia</h2>
+    </div>
     
-    <div class="row justify-content-center align-items-center" id="communities">
-        <h2 class="display-3 text-light" id="communities">Communities</h2>
+    <div class="row bg-dark justify-content-center align-items-center m-1 mt-3" style="--bs-bg-opacity:0.4; border-radius: 1rem;">
+        <div class="col-3">
+            
+            <img src="/static/Investopedia-Logo.png" class="img-fluid">
+        
+        </div>
+        <div class="col-9">
+            <form class="d-flex m-3" id="searchform">
+                <div class="input-group align-bottom">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input class="form-control me-2" type="text" id="searchterm"placeholder="Search for terms on investopedia"  aria-label="Search" style="opacity: 0.6;"> 
+                </div>
+                <button class="btn btn-dark" type="submit">Search</button>
+            </form>
+        </div>  
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center align-items-center m-3" id="books">
+        <h2 class="display-5 text-light">Reading list</h2>
+    </div>
+
+    
+    
+    <div class="row justify-content-center ">
+        <div class="col-md-6">
+            <div class="d-flex align-items-start">
+                <div class="nav flex-column nav-pills chapters me-3 bg-light" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="border-radius: 0.25rem;">
+                  <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">General</button>
+                  <button class="nav-link " id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Investing</button>
+                  <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Budgetting</button>
+                  <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Retirement</button>
+                </div>
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <ul class="list-group bg-dark" style="--bs-bg-opacity:0.8">
+                                <li class="list-group-item list-group-item-dark">Personal Finance in Your 20s For Dummies</li>
+                                <li class="list-group-item list-group-item-secondary">Rich Dad Poor Dad</li>
+                                <li class="list-group-item list-group-item-dark">The Richest Man in Babylon</li>
+                                <li class="list-group-item list-group-item-secondary">The Millionaire Next Door: The Surprising Secrets of America's Wealthy</li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                    </div>
+            </div>
+            
+        </div>
+        <div class="col-4">
+    </div>
+
+
+    <div class="row justify-content-center align-items-center m-3" id="communities">
+        <h2 class="display-5 text-light" id="communities">Communities</h2>
+    </div>
+
+    <div class="row justify-content-center ">
 
         <div class="col-md-6">
             <ul class="list-group m-3 bg-dark" style="--bs-bg-opacity:0.4">

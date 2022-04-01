@@ -1,0 +1,7 @@
+.nav-pills.chapters .nav-link.active, .nav-pills.chapters .show>.nav-link{
+    background-color: #000000da;
+}
+
+.chapters .nav-link{
+    color: #000000 ;
+}
