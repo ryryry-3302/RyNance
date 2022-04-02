@@ -174,4 +174,13 @@ def salary():
     
     if records == None:
         return apology("Invalid parse")
-    return render_template("salary.html", records=records degree=degree)
+
+    return render_template("salary.html", records=records, degree=degree)
+
+@app.route("/addlist", methods=["GET", "POST"])
+@login_required
+def addsalary():
+    if request.method == "POST":
+
+        record = request.form.get("addid")
+        return redirect("/salary")

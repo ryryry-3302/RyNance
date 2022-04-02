@@ -38,34 +38,65 @@
             </form>
         </div>  
     </div>
-    <div class="row">
-        <table class="table table-primary table-striped">
-            <thead>
-                  <tr>
-                  <th scope="col">University </th>
-                  <th scope="col">Course</th>
-                  <th scope="col">Median Salary</th>
-                  <th scope="col">25 Percentile</th>
-                  <th scope="col">75 Percentile</th>
-                  <th scope="col">Employment Rate</th>
-                  </tr>
+    <div class="row justify-content-center m-3">
+        <div class="col-10">
+            <table class="table table-dark table-hover table-striped border border-dark border-2" style="opacity: 0.9; border-radius: 2rem;">
+                <thead>
+                    <tr>
+                    <th scope="col">University </th>
+                    <th scope="col">Course</th>
+                    <th scope="col">Median Salary</th>
+                    <th scope="col">25 Percentile</th>
+                    <th scope="col">75 Percentile</th>
+                    <th scope="col">Employment Rate</th>
+                    <th scope="col">Add to my list</th>
+                    </tr>
 
-            </thead>
-            <tbody>
-                {% for record in records %}
-                   {% if (record["year"] == "2019") and (record["gross_monthly_median"] != "na")%} 
-                        <tr>
-                            <td scope="col">{{record["university"]}}</td>
-                            <td scope="col">{{record["degree"]}}</td>
-                            <td scope="col">{{record["gross_monthly_median"]}}</td>
-                            <td scope="col">{{record["gross_mthly_25_percentile"]}}</td>
-                            <td scope="col">{{record["gross_mthly_75_percentile"]}}</td>
-                            <td scope="col">{{record["employment_rate_overall"]}}</td>
-                        </tr>
-                    {% endif %}
-                {% endfor%}
-            </tbody>
-      </table>
+                </thead>
+                <tbody>
+                    {% for record in records %}
+                        {% if (record["year"] == "2019") and (record["gross_monthly_median"] != "na") %} 
+                            {% if  (degree in record["degree"].lower())%}
+                                <tr>
+                                    <td scope="col">{{record["university"]}}</td>
+                                    <td scope="col">{{record["degree"]}}</td>
+                                    <td scope="col">{{record["gross_monthly_median"]}}</td>
+                                    <td scope="col">{{record["gross_mthly_25_percentile"]}}</td>
+                                    <td scope="col">{{record["gross_mthly_75_percentile"]}}</td>
+                                    <td scope="col">{{record["employment_rate_overall"]}}</td>
+                                    <td scope="col">
+                                        <form action="/addlist" method="post">
+                                            <input type="hidden" name="addid" value="{{record}}">
+                                            <input type="submit" value="Add">
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor%}
+                    {% for record in records %}
+                        {% if (record["year"] == "2019") and (record["gross_monthly_median"] != "na") %} 
+                            {% if  (degree not in record["degree"].lower())%}
+                                <tr>
+                                    <td scope="col">{{record["university"]}}</td>
+                                    <td scope="col">{{record["degree"]}}</td>
+                                    <td scope="col">{{record["gross_monthly_median"]}}</td>
+                                    <td scope="col">{{record["gross_mthly_25_percentile"]}}</td>
+                                    <td scope="col">{{record["gross_mthly_75_percentile"]}}</td>
+                                    <td scope="col">{{record["employment_rate_overall"]}}</td>
+                                    <td scope="col">
+                                        <form action="/addlist" method="post">
+                                            <input type="hidden" name="addid" value="{{record}}">
+                                            <input type="submit" value="Add">
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor%}
+                </tbody>
+            </table>
+        </div>
     </div>
 
 
