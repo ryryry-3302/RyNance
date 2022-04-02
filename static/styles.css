@@ -1,7 +1,17 @@
 .nav-pills.chapters .nav-link.active, .nav-pills.chapters .show>.nav-link{
-    background-color: #000000da;
+    background-color: #ffffffda;
+
 }
 
 .chapters .nav-link{
+    color: #ffffff ;
+}
+
+.chapters .nav-link.active{
     color: #000000 ;
+}
+
+
+.navbar-dark .navbar-nav.search .nav-link {
+    color: white;
 }

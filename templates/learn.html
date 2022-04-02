@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Calculate
+    Learn
 {% endblock %}
 
 {% block main %}
@@ -22,10 +22,10 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav justify-content-center w-100 fs-5 fw-bold">
+                <div class="navbar-nav search justify-content-center w-100 fs-5 fw-bold" style="color: white;">
                  <a class="nav-link"href="#search">Search</a>
                   <a class="nav-link "href="#books">Books</a>
-                  <a class="nav-link" href="#">Flowcharts</a>
+                  <a class="nav-link" href="#Flowcharts">Flowcharts</a>
                   <a class="nav-link disabled">Videos</a>
                   <a class="nav-link" href="#communities">Communities</a>
                 </div>
@@ -33,8 +33,10 @@
             </div>
           </nav>
     </div>
-    <div class="row justify-content-center align-items-center m-3">
-        <h2 class="display-5 text-light" id="search">Search investopedia</h2>
+    <div class="row justify-content-center align-items-center m-3 mt-5">
+        <h2 class="display-5 text-light" id="search">
+            <span>Search investopedia <a href="#"><i class="bi bi-caret-up-fill" style="color: white;"></i></a></span>
+        </h2>
     </div>
     
     <div class="row bg-dark justify-content-center align-items-center m-1 mt-3" style="--bs-bg-opacity:0.4; border-radius: 1rem;">
@@ -54,16 +56,16 @@
         </div>  
     </div>
 
-    <div class="row justify-content-center align-items-center m-3" id="books">
-        <h2 class="display-5 text-light">Reading list</h2>
+    <div class="row justify-content-center align-items-center m-3 mt-5" id="books">
+        <h2 class="display-5 text-light">Reading list <a href="#"><i class="bi bi-caret-up-fill" style="color: white;"></i></a></h2>
     </div>
 
     
     
-    <div class="row justify-content-center ">
+    <div class="row justify-content-center mt-5">
         <div class="col-md-6">
             <div class="d-flex align-items-start">
-                <div class="nav flex-column nav-pills chapters me-3 bg-light" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="border-radius: 0.25rem;">
+                <div class="nav flex-column nav-pills chapters me-3 bg-dark" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="border-radius: 0.25rem; --bs-bg-opacity:0.8;">
                   <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">General</button>
                   <button class="nav-link " id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Investing</button>
                   <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Budgetting</button>
@@ -108,9 +110,32 @@
         <div class="col-4">
     </div>
 
+    <div class="row justify-content-center align-items-center m-3 mt-5" id="books">
+        <h2 class="display-5 text-light" id="Flowcharts">Flowcharts / guides <a href="#"><i class="bi bi-caret-up-fill" style="color: white;"></i></a> </h2>
+    </div>
 
-    <div class="row justify-content-center align-items-center m-3" id="communities">
-        <h2 class="display-5 text-light">Communities</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <a href="https://docs.google.com/drawings/d/139gffSQnaPwZsMyiexoY1m2la8tUZJrOZErDmRlegzE/edit?usp=sharing">
+                <img class="w-100" data-bs-toggle="tooltip" data-bs-placement="right" title='Made by r/SGFI' src="https://docs.google.com/drawings/d/e/2PACX-1vSa08wtH1_boTFKqb_AMgxWEDLkMsrdRT109ERvyZ0QlnUWE82rXGoM_pcuv44Gd3DZbr9QZFJ9GWHC/pub?w=2889&amp;h=3500">
+            </a>    
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <a href="https://www.reddit.com/r/singaporefi/comments/j7f815/starting_guide_to_fi/">  
+                <iframe class="w-100" id="reddit-embed" src="https://www.redditmedia.com/r/singaporefi/comments/j7f815/starting_guide_to_fi/?ref_source=embed&amp;ref=share&amp;embed=true&amp;showmedia=false&amp;theme=dark" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="127" width="640" scrolling="no"></iframe>
+            </a>
+        </div>
+
+    </div>
+
+    
+
+
+    <div class="row justify-content-center align-items-center m-3 mt-5" id="communities">
+        <h2 class="display-5 text-light">Communities <a href="#"><i class="bi bi-caret-up-fill" style="color: white;"></i></a></h2>
     </div>
 
     <div class="row justify-content-center" >
