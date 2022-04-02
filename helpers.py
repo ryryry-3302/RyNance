@@ -62,3 +62,20 @@ def lookup(symbol):
 def usd(value):
     """Format value as USD."""
     return f"${value:,.2f}"
+
+def checksalary(name):
+    try:
+        url = f"https://data.gov.sg/api/action/datastore_search?resource_id=9326ca53-9153-4a9c-b93f-8ae032637b70&q={urllib.parse.quote_plus(name)}&limit=1000"
+        response = requests.get(url)
+        response.raise_for_status()
+    except requests.RequestException:
+        return None
+
+    # Parse response
+    try:
+        quote = response.json()
+        print(len(quote["result"]["records"]))
+        return quote["result"]["records"]
+
+    except:
+        return None

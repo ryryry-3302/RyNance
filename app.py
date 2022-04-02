@@ -1,6 +1,7 @@
 from http.client import REQUEST_TIMEOUT
 import os
 import datetime
+import urllib
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
@@ -8,7 +9,7 @@ from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, lookup, usd
+from helpers import apology, checksalary, login_required, lookup, usd
 
 # Configure application
 app = Flask(__name__)
@@ -41,6 +42,8 @@ def after_request(response):
 def index():
     rows = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     name = rows[0]["username"]
+    records = checksalary("Computer Engineering")
+    print(records)
     return render_template("index.html", name=name)
 
 @app.route("/change", methods=["GET","POST"])
@@ -159,3 +162,16 @@ def learn():
     if request.method == "GET":
         return render_template("learn.html")
 
+
+@app.route("/salary", methods=["GET", "POST"])
+@login_required
+def salary():
+    if request.method == "GET":
+        return render_template("salary.html")
+    
+    degree = request.form.get("degree")
+    records = checksalary(degree)
+    
+    if records == None:
+        return apology("Invalid parse")
+    return render_template("salary.html", records=records degree=degree)

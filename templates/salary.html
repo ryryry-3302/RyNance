@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Salaries
+{% endblock %}
+
+{% block main %}
+<div class="container-md text-start bg-dark border border-secondary border-3 border-dark" style="--bs-bg-opacity: 0.2; border-radius: 2rem;">
+    
+    <div class="row justify-content-center">
+        <h1 class="display-1 text-light text-center">
+            Compare <i class="bi bi-cart4"></i>
+        </h1>
+        
+    </div>
+    
+    <div class="row justify-content-center align-items-center m-3 mt-5">
+        <h2 class="display-5 text-light" id="search">
+            <span>Search for course</span>
+        </h2>
+    </div>
+    
+    <div class="row bg-dark justify-content-center align-items-center m-1 mt-3" style="--bs-bg-opacity:0.4; border-radius: 1rem;">
+        <div class="col-2 justify-content-end">
+            
+            <a href="https://data.gov.sg/"><img src="/static/datagovraw(1).png" class="w-100"></a>
+        
+        </div>
+        
+
+        <div class="col-9">
+            <form class="d-flex ml-0 m-3" id="searchformjob" action="/salary" method="post">
+                <div class="input-group align-bottom">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input class="form-control me-2" required autocomplete="off" type="text" name="degree" placeholder="Search on Data.gov.sg"  aria-label="Search" style="opacity: 0.6;"> 
+                </div>
+                <button class="btn btn-dark" type="submit">Search</button>
+            </form>
+        </div>  
+    </div>
+    <div class="row">
+        <table class="table table-primary table-striped">
+            <thead>
+                  <tr>
+                  <th scope="col">University </th>
+                  <th scope="col">Course</th>
+                  <th scope="col">Median Salary</th>
+                  <th scope="col">25 Percentile</th>
+                  <th scope="col">75 Percentile</th>
+                  <th scope="col">Employment Rate</th>
+                  </tr>
+
+            </thead>
+            <tbody>
+                {% for record in records %}
+                   {% if (record["year"] == "2019") and (record["gross_monthly_median"] != "na")%} 
+                        <tr>
+                            <td scope="col">{{record["university"]}}</td>
+                            <td scope="col">{{record["degree"]}}</td>
+                            <td scope="col">{{record["gross_monthly_median"]}}</td>
+                            <td scope="col">{{record["gross_mthly_25_percentile"]}}</td>
+                            <td scope="col">{{record["gross_mthly_75_percentile"]}}</td>
+                            <td scope="col">{{record["employment_rate_overall"]}}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor%}
+            </tbody>
+      </table>
+    </div>
+
+
+
+
+
+
+
+{% endblock %}
