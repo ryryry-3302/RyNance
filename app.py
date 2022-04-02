@@ -2,6 +2,7 @@ from http.client import REQUEST_TIMEOUT
 import os
 import datetime
 import urllib
+import json
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
@@ -181,6 +182,9 @@ def salary():
 @login_required
 def addsalary():
     if request.method == "POST":
-
-        record = request.form.get("addid")
+        record = json.loads(request.form.get("addid"))
+        username = db.execute('SELECT username FROM users WHERE id = ?', session["user_id"])
+        print(record)
+        print(record['university'])
+        db.execute('INSERT INTO lists (username, university, course, median, twentyfive, seventyfive, employmentrate) values(?, ?, ?, ?, ?, ?, ?)', username, record[0]["university"], record[0]["degree"], record[0]["gross_monthly_median"], record[0]["gross_mthly_25_percentile"], record[0]["gross_mthly_75_percentile"], record[0]["employment_rate_overall"])
         return redirect("/salary")
