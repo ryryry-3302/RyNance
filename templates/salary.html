@@ -7,6 +7,8 @@
 {% block main %}
 <div class="container-md text-start bg-dark border border-secondary border-3 border-dark" style="--bs-bg-opacity: 0.2; border-radius: 2rem;">
     
+
+
     <div class="row justify-content-center">
         <h1 class="display-1 text-light text-center">
             Compare <i class="bi bi-cart4"></i>
@@ -14,10 +16,33 @@
         
     </div>
     
+    <div class="row ">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-dark" style="--bs-bg-opacity:0.4;">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav search justify-content-center w-100 fs-5 fw-bold" style="color: white;">
+                    <a class="nav-link"href="#search">Search</a>
+                     {% if request.method == "POST" %}
+                    <a class="nav-link "href="#salaryresults">Results</a>
+                    {% endif %}
+                    <a class="nav-link "href="#salarylist">My list</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </div>
+
+
     <div class="row justify-content-center align-items-center m-3 mt-5">
         <h2 class="display-5 text-light" id="search">
-            <span>Search for course</span>
+            <span>Search for course <a href="#"><i class="bi bi-caret-up-fill" style="color: white;"></i></a></span>
         </h2>
+        <div class="fs-4 text-white" style="opacity: 0.7;">
+            Data from 2019
+        </div>
     </div>
     
     <div class="row bg-dark justify-content-center align-items-center m-1 mt-3" style="--bs-bg-opacity:0.4; border-radius: 1rem;">
@@ -38,9 +63,18 @@
             </form>
         </div>  
     </div>
+    {% if request.method == "POST" %}
+
+    <div class="row justify-content-center align-items-center m-3 mt-5">
+        <h2 class="display-5 text-light" id="search">
+            <span> Results <a href="#"><i class="bi bi-caret-up-fill" style="color: white;"></i></a> </span>
+        </h2>
+    </div>
+
+    
     <div class="row justify-content-center m-3">
         <div class="col-10">
-            <table class="table table-dark table-hover table-striped border border-dark border-2" style="opacity: 0.9; border-radius: 2rem;">
+            <table class="table table-dark table-hover table-striped align-middle" id="salaryresults" style="opacity: 0.9;">
                 <thead>
                     <tr>
                     <th scope="col">University </th>
@@ -74,32 +108,57 @@
                             {% endif %}
                         {% endif %}
                     {% endfor%}
-                    {% for record in records %}
-                        {% if (record["year"] == "2019") and (record["gross_monthly_median"] != "na") %} 
-                            {% if  (degree not in record["degree"].lower())%}
-                                <tr>
-                                    <td scope="col">{{record["university"]}}</td>
-                                    <td scope="col">{{record["degree"]}}</td>
-                                    <td scope="col">{{record["gross_monthly_median"]}}</td>
-                                    <td scope="col">{{record["gross_mthly_25_percentile"]}}</td>
-                                    <td scope="col">{{record["gross_mthly_75_percentile"]}}</td>
-                                    <td scope="col">{{record["employment_rate_overall"]}}</td>
-                                    <td scope="col">
-                                        <form action="/addlist" method="post">
-                                            <input type="hidden" name="addid" value="{{record}}">
-                                            <input type="submit" value="Add">
-                                        </form>
-                                    </td>
-                                </tr>
-                            {% endif %}
-                        {% endif %}
-                    {% endfor%}
                 </tbody>
             </table>
         </div>
+        {% endif %}
+
+        <div class="row justify-content-center align-items-center m-3 mt-5">
+            <h2 class="display-5 text-light" id="salarylist">
+                <span>My list <a href="#"><i class="bi bi-caret-up-fill" style="color: white;"></i></a></span>
+            </h2>
+        </div>
+
+        <div class="row justify-content-center m-3">
+            <div class="col-12 ">
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover table-striped align-middle" style="opacity: 0.9">
+                        <thead>
+                            <tr>
+                            <th scope="col">University </th>
+                            <th scope="col">Course</th>
+                            <th scope="col">Median Salary</th>
+                            <th scope="col">25 Percentile</th>
+                            <th scope="col">75 Percentile</th>
+                            <th scope="col">Employment Rate</th>
+                            <th scope="col">Remove</th>
+                            </tr>
+        
+                        </thead>
+                        <tbody>
+                            {% for row in mylist %}
+                                        <tr>
+                                            <td scope="col">{{row["university"]}}</td>
+                                            <td scope="col">{{row["course"]}}</td>
+                                            <td scope="col">{{row["median"]}}</td>
+                                            <td scope="col">{{row["twentyfive"]}}</td>
+                                            <td scope="col">{{row["seventyfive"]}}</td>
+                                            <td scope="col">{{row["employmentrate"]}}</td>
+                                            <td>
+                                                <form action ="/removecourse" method="post">
+                                                    <input type="hidden" name="courseid" value="{{row.id}}">
+                                                    <input type="submit" value="Remove">
+                                                </form>
+                                            </td>
+                                        </tr>
+                            {% endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
     </div>
 
-
+    
 
 
 
