@@ -5,19 +5,145 @@
 {% endblock %}
 
 {% block main %}
+
 <div class="container-md text-start bg-dark border border-secondary border-3 border-dark" style="--bs-bg-opacity: 0.2; border-radius: 2rem;">
     
 
 
     <div class="row justify-content-center">
         <h1 class="display-1 text-light text-center">
-            Budget <i class="bi bi-wallet2
-            "></i>
+            Budget <i class="bi bi-wallet2"></i>
         </h1>
-        
     </div>
+
+    <div class="row justify-content-center align-items-center mb-3">
+        <div class="col-md-5 mb-3">
+            <h3 class="fs-4 tw-bolder text-light text-start">Monthly Budget</h3>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text">
+                    <i class="bi bi-currency-dollar"></i>
+                </span>
+                <input type="number" required autofocus class="form-control text-center" onchange="updatechart()" onkeyup="updatechart()" value="3000" id="total" placeholder="Cost of food">
+                <span class="input-group-text">
+                    <i class="bi bi-piggy-bank"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center mb-3">
+        <div class="col-md-5 mb-3">
+            <h3 class="fs-4 tw-bolder text-light text-start">Food expenses</h3>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text">
+                    <i class="bi bi-currency-dollar"></i>
+                </span>
+                <input type="number" required autofocus class="form-control text-center" onchange="updatechart()" onkeyup="updatechart()" value="150" id="food" placeholder="Cost of food">
+                <span class="input-group-text">
+                    <i class="bi bi-egg-fried"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center mb-3">
+        <div class="col-md-5 mb-3">
+            <h3 class="fs-4 tw-bolder text-light text-start">Transport expenses</h3>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text">
+                    <i class="bi bi-currency-dollar"></i>
+                </span>
+                
+                <input type="number" required autofocus class="form-control text-center" onchange="updatechart()"  onkeyup="updatechart()" value="30" id="transport" placeholder="Cost of food">
+                
+                <span class="input-group-text">
+                    <i class="bi bi-bicycle"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center mb-3">
+        <div class="col-md-5 mb-3">
+            <h3 class="fs-4 tw-bolder text-light text-start">Leisure expenses</h3>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text">
+                    <i class="bi bi-currency-dollar"></i>
+                </span>
+                
+                <input type="number" required autofocus class="form-control text-center" onchange="updatechart()"  onkeyup="updatechart()" value="30" id="leisure" placeholder="Cost of food">
+                
+                <span class="input-group-text">
+                    <i class="bi bi-palette"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center mb-3">
+        <div class="col-md-5 mb-3">
+            <h3 class="fs-4 tw-bolder text-light text-start">Groceries</h3>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text">
+                    <i class="bi bi-currency-dollar"></i>
+                </span>
+                
+                <input type="number" required autofocus class="form-control text-center" onchange="updatechart()"  onkeyup="updatechart()" value="30" id="groceries" placeholder="Cost of food">
+                
+                <span class="input-group-text">
+                    <i class="bi bi-basket2"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center mb-3">
+        <div class="col-md-5 mb-3">
+            <h3 class="fs-4 tw-bolder text-light text-start">Others</h3>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text">
+                    <i class="bi bi-currency-dollar"></i>
+                </span>
+                
+                <input type="number" required autofocus class="form-control text-center" onchange="updatechart()"  onkeyup="updatechart()" value="30" id="others" placeholder="Cost of food">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center mb-3">
+        <div class="col-md-5 mb-3">
+            <h3 class="fs-4 tw-bolder text-light text-start">Savings</h3>
+        </div>
+        <div class="col-md-3 mb-3">
+            <h3 class="display-4 text-light text-center text-align-top" id="savings">0</h3>
+        </div>
+    </div>
+
     
- 
+    <div class="row justify-content-center">
+        <div class="col-8">
+        
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <script src="/static/budget.js"></script>
+
+    
+    
 
 {% endblock %}
 
