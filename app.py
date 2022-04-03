@@ -198,3 +198,11 @@ def removesalary():
         courseid = request.form.get("courseid")
         db.execute("DELETE FROM lists WHERE id = ?", courseid)
         return redirect("/salary")
+
+
+
+@app.route("/budget", methods=["GET", "POST"])
+@login_required
+def budget():
+    if request.method == "GET":
+        return render_template("budget.html")
