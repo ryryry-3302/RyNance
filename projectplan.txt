@@ -2,7 +2,7 @@ What will your software do? What features will it have? How will it be executed?
 
     Register/Login for managing user data on their own financial standings#done
         -Can reuse some of pset finances code #done
-        -Need to think about how to set up the data for the tables containing user information
+        -Need to think about how to set up the data for the tables containing user information #done
 
     Retirement Calculator
         -Use python to code the math that is inputted from html #done
@@ -17,7 +17,13 @@ What will your software do? What features will it have? How will it be executed?
         -link to further readings and articles
 
     Job salary comparer
-        -ideally sources from local data
+        -ideally sources from local data #done
+        -add to wish list #done
+
+    learn tab
+        -search for jargon using investopedia #done
+        -embed html of various guides#done
+        -include note of reccomended groups and reading material#done
 
     Budget/ Monthly spending monitoring
         -Slice data in easy to read beautiful charts
