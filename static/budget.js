@@ -13,22 +13,28 @@ const ctx = document.getElementById('myChart');
 const myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ['Food', 'Transport'],
+        labels: ['Food', 'Transport', 'Leisure' ,'Groceries', 'Others', 'Savings'],
         datasets: [{
             label: 'Budget',
             data: [
                 food.value,
-                transport.value
+                transport.value,
+                leisure.value,
+                groceries.value,
+                others.value,
+                savingsvalue
+
             ],
 
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)'
+                '#004c6d',
+                '#416985',
+                '#6c889e',
+                '#96a8b7',
+                '#c0c9d1',
+                '#ebebeb'
             ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)'
-            ],
+            borderColor: 'black',
             borderWidth: 1
         }]
     },
@@ -38,10 +44,17 @@ const myChart = new Chart(ctx, {
 
 function updatechart(){
     console.log("imchanging");
-    
+
     savingsvalue = total.value - food.value - transport.value - leisure.value - groceries.value -others.value;
     $('#savings').text('$' + savingsvalue);
-    var updateValues = [food.value, transport.value];
+    var updateValues = [
+        food.value,
+        transport.value,
+        leisure.value,
+        groceries.value,
+        others.value,
+        savingsvalue
+    ];
     myChart.data.datasets[0].data = updateValues;
     
     myChart.update();
