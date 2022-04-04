@@ -8,10 +8,11 @@ let others = $('#others')[0];
 let savingsvalue = total.value - food.value - transport.value - leisure.value - groceries.value -others.value;
 
 
+$('#savings').text('$' + savingsvalue);
 
 const ctx = document.getElementById('myChart');
 const myChart = new Chart(ctx, {
-    type: 'pie',
+    type: 'doughnut',
     data: {
         labels: ['Food', 'Transport', 'Leisure' ,'Groceries', 'Others', 'Savings'],
         datasets: [{
@@ -26,21 +27,30 @@ const myChart = new Chart(ctx, {
 
             ],
 
+            
+
             backgroundColor: [
-                '#004c6d',
-                '#416985',
-                '#6c889e',
-                '#96a8b7',
-                '#c0c9d1',
-                '#ebebeb'
+                '#003366',
+                '#02234D',
+                '#030F33',
+                '#000000',
+                '#17021A',
+                '#2B0933'
             ],
             borderColor: 'black',
-            borderWidth: 1
+            borderWidth: 1,
+            hoverOffset: 20,
+            hoverBorder: 3,
+            hoverBorderColor: 'white'
         }]
     },
     options: {
+
     }
 });
+
+
+Chart.defaults.color = 'white';
 
 function updatechart(){
     console.log("imchanging");
