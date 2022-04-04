@@ -1,6 +1,6 @@
+psycopg2
 cs50
 Flask
 Flask-Session
 requests
 gunicorn
-psycopg2
