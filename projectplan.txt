@@ -26,15 +26,15 @@ What will your software do? What features will it have? How will it be executed?
         -include note of reccomended groups and reading material#done
 
     Budget/ Monthly spending monitoring
-        -Slice data in easy to read beautiful charts
-        -Allows users to edit and remove data
+        -Slice data in easy to read beautiful charts #done
+        -Allows users to edit and remove data #done
 
 
 What new skills will you need to acquire? What topics will you need to research?
-    Improve java script knowledge#
-    Improve Bootstrap knowledge#
-    Learn how to create graphs#
-    Find relavant APIs and learn how to process them and request for them
+    Improve java script knowledge# #done
+    Improve Bootstrap knowledge# done
+    Learn how to create graphs#done
+    Find relavant APIs and learn how to process them and request for them #done
 
 
 If working with one or two classmates, who will do what?
