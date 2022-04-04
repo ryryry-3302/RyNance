@@ -170,9 +170,11 @@ def learn():
 @app.route("/salary", methods=["GET", "POST"])
 @login_required
 def salary():
+    username = db.execute('SELECT username FROM users WHERE id = ?', session["user_id"])[0]['username']
+    mylist = db.execute('SELECT * FROM lists WHERE username = ?', username)
+    
     if request.method == "GET":
-        username = db.execute('SELECT username FROM users WHERE id = ?', session["user_id"])[0]['username']
-        mylist = db.execute('SELECT * FROM lists WHERE username = ?', username)
+        
         print(mylist)
         return render_template("salary.html", mylist=mylist)
     
@@ -182,7 +184,7 @@ def salary():
     if records == None:
         return apology("Invalid parse")
 
-    return render_template("salary.html", records=records, degree=degree)
+    return render_template("salary.html", records=records, degree=degree, mylist=mylist)
 
 @app.route("/addlist", methods=["GET", "POST"])
 @login_required
