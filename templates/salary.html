@@ -63,6 +63,11 @@
             </form>
         </div>  
     </div>
+    <div class="row">
+        {{records}}
+    </div>
+
+
     {% if request.method == "POST" %}
 
     <div class="row justify-content-center align-items-center m-3 mt-5">
@@ -113,7 +118,7 @@
                 </table>
             </div>
         </div>
-        {% endif %}
+    {% endif %}
 
         <div class="row justify-content-center align-items-center m-3 mt-5">
             <h2 class="display-5 text-light" id="salarylist">
