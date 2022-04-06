@@ -46,8 +46,6 @@ def after_request(response):
 def index():
     rows = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     name = rows[0]["username"]
-    records = checksalary("Computer Engineering")
-    print(records)
     return render_template("index.html", name=name)
 
 @app.route("/change", methods=["GET","POST"])
@@ -170,19 +168,21 @@ def learn():
 @app.route("/salary", methods=["GET", "POST"])
 @login_required
 def salary():
+    username = db.execute('SELECT username FROM users WHERE id = ?', session["user_id"])[0]['username']
+    mylist = db.execute('SELECT * FROM lists WHERE username = ?', username)
     if request.method == "GET":
-        username = db.execute('SELECT username FROM users WHERE id = ?', session["user_id"])[0]['username']
-        mylist = db.execute('SELECT * FROM lists WHERE username = ?', username)
+        
         print(mylist)
         return render_template("salary.html", mylist=mylist)
     
     degree = request.form.get("degree")
     records = checksalary(degree)
+    print(records)
     
     if records == None:
         return apology("Invalid parse")
 
-    return render_template("salary.html", records=records, degree=degree)
+    return render_template("salary.html", mylist=mylist, records=records, degree=degree)
 
 @app.route("/addlist", methods=["GET", "POST"])
 @login_required
