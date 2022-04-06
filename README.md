@@ -2,8 +2,7 @@
 
 ## ​Intro 
   
-Hi my name is Ryan and welcome to my firstproject. RyNance is a web application aimed at helping Singaporean youth gain interest in 
-Financial Planning and Financial literacy. RyNance is also my final project for CS50x 2022 :D
+Hi my name is Ryan and welcome to my first project, [RyNance](https://rynance.herokuapp.com/). RyNance is a web application aimed at helping Singaporean youth gain interest in Financial Planning and Financial literacy. RyNance is also my final project for CS50x 2022 :D 
 
 
 ![screencapture-rynance-herokuapp-2022-04-06-16_24_25](https://user-images.githubusercontent.com/80184478/161930335-1aa2ef49-fba0-4937-942d-6e99e1d1495c.png)
@@ -85,7 +84,7 @@ salary data.
 ## Deployment
 - After completing the code, I deployed my project onto Heroku and it can be accessed here rynance.herokuapp.com on both mobile and desktops as
 the website is made responsive through use of Bootstrap. I'd like to extend my gratitude to the CS50 staffs help through the CS50 guide to using Heroku on the Docs as well the r/CS50
-subreddit for being a great help to troubleshooting deploying.
+subreddit for being a great help to troubleshooting deploying. Find it here https://rynance.herokuapp.com/
 
 - ### Some of the things I had to learn for successful deployment
      - Changing my project.db to use postgress
