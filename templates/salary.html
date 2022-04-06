@@ -53,7 +53,7 @@
         </div>
         
 
-        <div class="col-9">
+        <div class="col-10">
             <form class="d-flex ml-0 m-3" id="searchformjob" action="/salary" method="post">
                 <div class="input-group align-bottom">
                     <span class="input-group-text"><i class="bi bi-search"></i></span>
@@ -76,7 +76,7 @@
 
     
     <div class="row justify-content-center m-3">
-        <div class="col-10">
+        <div class="col-12">
             <div class="table-responsive">
                 <table class="table table-dark table-hover table-striped align-middle" id="salaryresults" style="opacity: 0.9;">
                     <thead>
@@ -118,49 +118,49 @@
         </div>
     {% endif %}
 
-        <div class="row justify-content-center align-items-center m-3 mt-5">
-            <h2 class="display-5 text-light" id="salarylist">
-                <span>My list <a href="#"><i class="bi bi-caret-up-fill" style="color: white;"></i></a></span>
-            </h2>
-        </div>
+    <div class="row justify-content-center align-items-center m-3 mt-5">
+        <h2 class="display-5 text-light" id="salarylist">
+            <span>My list <a href="#"><i class="bi bi-caret-up-fill" style="color: white;"></i></a></span>
+        </h2>
+    </div>
 
-        <div class="row justify-content-center m-3">
-            <div class="col-12 ">
-                <div class="table-responsive">
-                    <table class="table table-dark table-hover table-striped align-middle" style="opacity: 0.9">
-                        <thead>
-                            <tr>
-                            <th scope="col">University </th>
-                            <th scope="col">Course</th>
-                            <th scope="col">Median Salary</th>
-                            <th scope="col">25 Percentile</th>
-                            <th scope="col">75 Percentile</th>
-                            <th scope="col">Employment Rate</th>
-                            <th scope="col">Remove</th>
-                            </tr>
-        
-                        </thead>
-                        <tbody>
-                            {% for row in mylist %}
-                                        <tr>
-                                            <td scope="col">{{row["university"]}}</td>
-                                            <td scope="col">{{row["course"]}}</td>
-                                            <td scope="col">{{row["median"]}}</td>
-                                            <td scope="col">{{row["twentyfive"]}}</td>
-                                            <td scope="col">{{row["seventyfive"]}}</td>
-                                            <td scope="col">{{row["employmentrate"]}}</td>
-                                            <td>
-                                                <form action ="/removecourse" method="post">
-                                                    <input type="hidden" name="courseid" value="{{row.id}}">
-                                                    <input type="submit" value="Remove">
-                                                </form>
-                                            </td>
-                                        </tr>
-                            {% endfor%}
-                        </tbody>
-                    </table>
-                </div>
+    <div class="row justify-content-center m-3">
+        <div class="col-12 ">
+            <div class="table-responsive">
+                <table class="table table-dark table-hover table-striped align-middle" style="opacity: 0.9">
+                    <thead>
+                        <tr>
+                        <th scope="col">University </th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Median Salary</th>
+                        <th scope="col">25 Percentile</th>
+                        <th scope="col">75 Percentile</th>
+                        <th scope="col">Employment Rate</th>
+                        <th scope="col">Remove</th>
+                        </tr>
+    
+                    </thead>
+                    <tbody>
+                        {% for row in mylist %}
+                                    <tr>
+                                        <td scope="col">{{row["university"]}}</td>
+                                        <td scope="col">{{row["course"]}}</td>
+                                        <td scope="col">{{row["median"]}}</td>
+                                        <td scope="col">{{row["twentyfive"]}}</td>
+                                        <td scope="col">{{row["seventyfive"]}}</td>
+                                        <td scope="col">{{row["employmentrate"]}}</td>
+                                        <td>
+                                            <form action ="/removecourse" method="post">
+                                                <input type="hidden" name="courseid" value="{{row.id}}">
+                                                <input type="submit" value="Remove">
+                                            </form>
+                                        </td>
+                                    </tr>
+                        {% endfor%}
+                    </tbody>
+                </table>
             </div>
+        </div>
     </div>
 
     
