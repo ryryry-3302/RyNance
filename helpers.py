@@ -75,15 +75,8 @@ def checksalary(name):
     try:
         quote = response.json()
         print(len(quote["result"]["records"]))
-        quotereal = quote["result"]["records"]
-        i = 0
-        realdict = []
-        for record in quotereal:
-            if (record["year"] == "2019") and (record["gross_monthly_median"] != "na"):
-                if  (name.lower() in record["degree"].lower()):
-                    realdict[i] = record
-                    i += 1
-        return realdict
+        return quote["result"]["records"]
+
 
     except:
         return None
