@@ -59,16 +59,14 @@
                     <span class="input-group-text"><i class="bi bi-search"></i></span>
                     <input class="form-control me-2" required autocomplete="off" type="text" name="degree" placeholder="Search on Data.gov.sg"  aria-label="Search" style="opacity: 0.6;"> 
                 </div>
-                <button class="btn btn-dark" type="submit">Search</button>
+                <button class="btn btn-dark" type="submit" ontouch>Search</button>
             </form>
         </div>  
     </div>
-    <div class="row">
-        {{records}}
-    </div>
+    
 
 
-    {% if request.method == "POST" %}
+    
 
     <div class="row justify-content-center align-items-center m-3 mt-5">
         <h2 class="display-5 text-light" id="search">
@@ -118,7 +116,7 @@
                 </table>
             </div>
         </div>
-    {% endif %}
+    
 
         <div class="row justify-content-center align-items-center m-3 mt-5">
             <h2 class="display-5 text-light" id="salarylist">
