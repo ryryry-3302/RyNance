@@ -2,7 +2,7 @@
 
 ## ​Intro 
   
-Hi my name is Ryan and welcome to my first project, [RyNance](https://rynance.herokuapp.com/). RyNance is a web application aimed at helping Singaporean youth gain interest in Financial Planning and Financial literacy. RyNance is also my final project for CS50x 2022 :D 
+Hi my name is Ryan and welcome to my first project, [RyNance](https://rynance.herokuapp.com/). RyNance is a web application aimed at helping Singaporean youth gain interest in Financial Planning and Financial literacy. RyNance is also my final project for CS50x 2022 :D [Demo](https://www.youtube.com/watch?v=oRNyVDiBEtg)
 
 
 ![screencapture-rynance-herokuapp-2022-04-06-16_24_25](https://user-images.githubusercontent.com/80184478/161930335-1aa2ef49-fba0-4937-942d-6e99e1d1495c.png)
