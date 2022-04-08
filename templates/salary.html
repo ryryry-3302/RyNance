@@ -95,7 +95,7 @@
                     <tbody>
                         {% for record in records %}
                             {% if (record["year"] == "2019") and (record["gross_monthly_median"] != "na") %} 
-                                {% if  (degree in record["degree"].lower())%}
+                                {% if  (degree.lower() in record["degree"].lower())%}
                                     <tr>
                                         <td scope="col">{{record["university"]}}</td>
                                         <td scope="col">{{record["degree"]}}</td>
