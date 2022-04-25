@@ -102,4 +102,5 @@ as time doing the course.
   - http://fireagecalc.com/ for the inspiration for the design of my own calculator
   - The open source community with the invaluable libraries of Bootstrap 5 and Chart.Js
   - and lastly the r/CS50 community
+  - -hi :D
 
