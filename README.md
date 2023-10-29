@@ -1,4 +1,9 @@
 # ​RyNance
+## Tech Stack
+-BootStrap5
+-Python, Flask
+-Javascript, HTML5, CSS
+
 
 ## ​Intro 
   
